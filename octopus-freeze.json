@@ -37,6 +37,16 @@
           "cmd": "node ./node_modules/octopus/scripts/setEnv --file=../../../env.json \"node ./node_modules/octopus/scripts/run install-cardinal\""
         }
       ]
+    },
+    {
+      "name": "install webcardinal",
+      "src": ".",
+      "actions": [
+        {
+          "type":"execute",
+          "cmd": "node ./node_modules/octopus/scripts/setEnv --file=../../../env.json \"node ./node_modules/octopus/scripts/run install-webcardinal\""
+        }
+      ]
     }
   ],
 
@@ -77,6 +87,24 @@
         }
       ]
     }  
+  ],
+  "install-webcardinal": [
+    {
+      "name": "webcardinal",
+      "src": "https://github.com/webcardinal/webcardinal-bundler",
+      "actions": [
+        {
+          "type": "smartClone",
+          "target": ".",
+          "collectLog": false,
+          "commit": "44036cf46b1209529c642dc7b3b4e7f856908d8b"
+        },
+        {
+          "type": "execute",
+          "cmd": "cd webcardinal && npm install"
+        }
+      ]
+    }
   ]
 }
 
