@@ -47,6 +47,16 @@
           "cmd": "node ./node_modules/octopus/scripts/setEnv --file=../../../env.json \"node ./node_modules/octopus/scripts/run install-webcardinal\""
         }
       ]
+    },
+    {
+      "name": "install blue-flurite-theme",
+      "src": ".",
+      "actions": [
+        {
+          "type":"execute",
+          "cmd": "node ./node_modules/octopus/scripts/setEnv --file=../../../env.json \"node ./node_modules/octopus/scripts/run install-blue-flurite-theme\""
+        }
+      ]
     }
   ],
 
@@ -105,6 +115,24 @@
         }
       ]
     }
+  ],
+  "install-blue-flurite-theme": [
+    {
+      "name": "themes/blue-fluorite-theme",
+      "src": "https://github.com/PrivateSky/blue-fluorite-theme.git",
+      "actions": [
+        {
+          "type": "smartClone",
+          "target": ".",
+          "collectLog": false,
+          "commit": "7dfa8dd6bd13239b698e0bd1a71e0aa353e16ba2"
+        },
+        {
+          "type": "execute",
+          "cmd": "cd themes/blue-fluorite-theme && npm install"
+        }
+      ]
+    }  
   ]
 }
 
