@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/VNogueira91/dsu-blueprint-digital-workspace/issues"
   },
-  "homepage": "https://github.com/VNogueira91/dsu-blueprint-digital-workspace#readme"
+  "homepage": "https://github.com/VNogueira91/dsu-blueprint-digital-workspace#readme",
+  "devDependencies": {
+    "octopus": "git+https://github.com/PrivateSky/octopus.git"
+  },
+  "dependencies": {}
 }
