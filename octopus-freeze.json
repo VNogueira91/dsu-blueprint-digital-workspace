@@ -57,6 +57,16 @@
           "cmd": "node ./node_modules/octopus/scripts/setEnv --file=../../../env.json \"node ./node_modules/octopus/scripts/run install-blue-flurite-theme\""
         }
       ]
+    },
+    {
+      "name": "install dossier-explorer",
+      "src": ".",
+      "actions": [
+        {
+          "type":"execute",
+          "cmd": "node ./node_modules/octopus/scripts/setEnv --file=../../../env.json \"node ./node_modules/octopus/scripts/run install-dossier-explorer\""
+        }
+      ]
     }
   ],
 
@@ -133,6 +143,24 @@
         }
       ]
     }  
+  ],
+  "install-dossier-explorer": [
+    {
+      "name": "dossier-explorer-wallet-prototype",
+      "src": "https://github.com/PrivateSky/dossier-explorer-wallet-prototype.git",
+      "actions": [
+        {
+          "type": "smartClone",
+          "target": ".",
+          "collectLog": false,
+          "commit": "8ccb66adb594da6571bb5024c4556b2c899388df"
+        },
+        {
+          "type": "execute",
+          "cmd": "cd dossier-explorer-wallet-prototype && npm install"
+        }
+      ]
+    }
   ]
 }
 
