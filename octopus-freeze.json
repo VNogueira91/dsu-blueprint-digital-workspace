@@ -11,8 +11,27 @@
           "cmd": "node ./node_modules/octopus/scripts/setEnv --file=../../../env.json \"node ./node_modules/octopus/scripts/run privatesky-dependencies\""
         }
       ]  
+    },
+    {
+      "name": "install dossier-explorer",
+      "src": ".",
+      "actions": [
+        {
+          "type":"execute",
+          "cmd": "node ./node_modules/octopus/scripts/setEnv --file=../../../env.json \"node ./node_modules/octopus/scripts/run dsu-explorer-dependencies\""
+        }
+      ]
+    },
+    {
+      "name": "private sky pre-build",
+      "src": ".",
+      "actions": [
+        {
+          "type": "execute",
+          "cmd": "node ./node_modules/octopus/scripts/setEnv --file=../../../env.json \"node ./node_modules/octopus/scripts/run privatesky-pre-build\""
+        }
+      ]  
     }
-
   ],
 
 
@@ -57,20 +76,8 @@
           "cmd": "node ./node_modules/octopus/scripts/setEnv --file=../../../env.json \"node ./node_modules/octopus/scripts/run install-blue-flurite-theme\""
         }
       ]
-    },
-    {
-      "name": "install dossier-explorer",
-      "src": ".",
-      "actions": [
-        {
-          "type":"execute",
-          "cmd": "node ./node_modules/octopus/scripts/setEnv --file=../../../env.json \"node ./node_modules/octopus/scripts/run dsu-explorer-dependencies\""
-        }
-      ]
     }
   ],
-
-
 
   "install-pskrelease": [
     {
@@ -233,6 +240,39 @@
         }
       ]
     }  
+  ],
+
+  "privatesky-pre-build": [
+    {
+      "name": "pre build privatesky",
+      "src": ".",
+      "actions": [
+        {
+          "type": "execute",
+          "cmd": "cd privatesky && npm run build"
+        }
+      ]
+    },
+    {
+      "name": "pre build cardinal",
+      "src": ".",
+      "actions": [
+        {
+          "type": "execute",
+          "cmd": "cd cardinal && npm run build"
+        }
+      ]
+    },
+    {
+      "name": "pre build webcardinal",
+      "src": ".",
+      "actions": [
+        {
+          "type": "execute",
+          "cmd": "cd webcardinal && npm run bundle-minimal && npm run dev"
+        }
+      ]
+    }
   ]
 }
 
