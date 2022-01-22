@@ -167,6 +167,16 @@
           "cmd": "node ./node_modules/octopus/scripts/setEnv --file=../../../env.json \"node ./node_modules/octopus/scripts/run install-dsu-explorer-loader\""
         }
       ]
+    },
+    {
+      "name": "install dossier-explorer-ssap",
+      "src": ".",
+      "actions": [
+        {
+          "type":"execute",
+          "cmd": "node ./node_modules/octopus/scripts/setEnv --file=../../../env.json \"node ./node_modules/octopus/scripts/run install-dossier-explorer-ssap\""
+        }
+      ]
     }
   ],
 
@@ -205,5 +215,25 @@
         }
       ]
     }
+  ],
+  "install-dossier-explorer-ssap":[
+    {
+      "name": "dossier-explorer-ssapp",
+      "src": "https://github.com/PrivateSky/dossier-explorer-ssapp.git",
+      "actions": [
+        {
+          "type": "smartClone",
+          "target": ".",
+          "collectLog": false,
+          "commit": "6e7bed56f5c040908c32c099f5dd2a313fb1652c"
+        },
+        {
+          "type": "execute",
+          "cmd": "cd dossier-explorer-ssapp && npm install"
+        }
+      ]
+    }  
   ]
 }
+
+
